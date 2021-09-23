@@ -62,6 +62,10 @@ const (
 	blockDbNamePrefix = "blocks"
 )
 
+// winServiceMain is only invoked on Windows.  It detects when pktd is running
+// as a service and reacts accordingly.
+var winServiceMain func() (bool, er.R)
+
 // WalletUnlockerAuthOptions returns a list of DialOptions that can be used to
 // authenticate with the wallet unlocker service.
 //
